@@ -1,0 +1,43 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "kade-application01",
+          "appId": "1:40484261476:android:932d7942538c44aa905971",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "kade-application01",
+          "configurations": {
+            "android": "1:40484261476:android:932d7942538c44aa905971",
+            "ios": "1:40484261476:ios:e4eefcb176fa6312905971",
+            "macos": "1:40484261476:ios:e4eefcb176fa6312905971",
+            "web": "1:40484261476:web:d937d9198703a36a905971",
+            "windows": "1:40484261476:web:0edee9897d06742a905971"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}

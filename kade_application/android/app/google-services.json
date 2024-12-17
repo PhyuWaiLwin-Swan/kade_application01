@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "40484261476",
+    "project_id": "kade-application01",
+    "storage_bucket": "kade-application01.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:40484261476:android:932d7942538c44aa905971",
+        "android_client_info": {
+          "package_name": "com.example.kade_application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPpJK_4ci9ijVN00N73r1PS5iAdlhS32Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
