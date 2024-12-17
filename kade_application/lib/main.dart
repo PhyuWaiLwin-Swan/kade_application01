@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Kade application'),
+      home: const MyHomePage(title: 'Subbie',),
     );
   }
 }
@@ -70,6 +71,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var screenWidth = MediaQuery.of(context).size.width;
+    var scaleFactor = screenWidth / 360; // Adjust as needed based on your design
+    var subbieColor =  Color(0xFF074AE0);
+    var fontSize = 12 * scaleFactor;
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -81,44 +86,268 @@ class _MyHomePageState extends State<MyHomePage> {
         // TRY THIS: Try changing the color here to a specific color (to
         // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar
         // change color while the other colors stay the same.
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: Colors.transparent,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          //
-          // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-          // action in the IDE, or press "p" in the console), to see the
-          // wireframe for each widget.
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'Coming soon',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+        title: Text(
+          widget.title,
+          style:  TextStyle(
+            fontSize: fontSize * 0.6, // Increase the title size
+            fontWeight: FontWeight.bold,
+            color: subbieColor,
+            fontFamily: 'Mulish'// Optional: Make it bold
+          ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(40.0), // Adds spacing around the content
+          child: Column(
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+
+                    ),
+                  ),
+                  // Responsive Text
+                  Expanded(
+                    flex: 6,
+                    child: Container(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text( 'Easily find temporary',
+                            style:  TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontFamily: 'Mulish',
+                              fontSize: fontSize,
+                            ),// Ensures text wraps properly
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text( 'staff with ',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontFamily: 'Mulish',
+                                  fontSize: fontSize,
+                                ),
+                                // Ensures text wraps properly
+                              ),
+                              Text( 'Subbie',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: subbieColor,
+                                  fontFamily: 'Mulish',
+                                  fontSize: fontSize+fontSize * 0.5,
+                                ),
+                                // Ensures text wraps properly
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+
+                    ),
+                  ),
+                  // Responsive Image
+                  Expanded(
+                    flex: 4,
+                    child: Container(
+                      child: Image.asset(
+                        'assets/subbie_logo.png',
+                        fit: BoxFit.contain, // Ensures image resizes proportionally
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+
+                    ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                  Container(
+                    width: fontSize * 0.8, // Set circle size
+                    height: fontSize * 0.8,
+                    decoration: const BoxDecoration(
+                      color: Colors.black, // Circle color
+                      shape: BoxShape.circle, // Make it a circle
+                    ),
+                    child:  Center(
+                      child: Text(
+                        '1', // Number inside the circle
+                        style: TextStyle(
+                          color: Colors.white, // Text color
+                          fontSize: fontSize * 0.6, // Font size
+                          fontWeight: FontWeight.bold, // Bold text
+                        ),
+                      ),
+                    ),
+                  ),
+                          Container(width: fontSize*0.4,),
+                          Text( 'Narrow location',
+                            style:  TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontFamily: 'Mulish',
+                              fontSize: fontSize * 0.8,
+                            ),// Ensures text wraps properly
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: fontSize * 0.8, // Set circle size
+                            height: fontSize * 0.8,
+                            decoration: const BoxDecoration(
+                              color: Colors.black, // Circle color
+                              shape: BoxShape.circle, // Make it a circle
+                            ),
+                            child:  Center(
+                              child: Text(
+                                '2', // Number inside the circle
+                                style: TextStyle(
+                                  color: Colors.white, // Text color
+                                  fontSize: fontSize * 0.6, // Font size
+                                  fontWeight: FontWeight.bold, // Bold text
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(width: fontSize*0.4,),
+                          Text( 'Choose industry/trade',
+                            style:  TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black,
+                              fontFamily: 'Mulish',
+                              fontSize: fontSize * 0.8,
+                            ),// Ensures text wraps properly
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: fontSize * 0.8, // Set circle size
+                            height: fontSize * 0.8,
+                            decoration: const BoxDecoration(
+                              color: Colors.black, // Circle color
+                              shape: BoxShape.circle, // Make it a circle
+                            ),
+                            child:  Center(
+                              child: Text(
+                                '3', // Number inside the circle
+                                style: TextStyle(
+                                  color: Colors.white, // Text color
+                                  fontSize: fontSize * 0.6, // Font size
+                                  fontWeight: FontWeight.bold, // Bold text
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(width: fontSize*0.4,),
+                          Row(
+                            children: [
+                              Text( 'Subbie ',
+                                style:  TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: subbieColor,
+                                  fontFamily: 'Mulish',
+                                  fontSize: fontSize * 0.8,
+                                ),// Ensures text wraps properly
+                              ),
+                              Text( 'finds your Pro',
+                                style:  TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black,
+                                  fontFamily: 'Mulish',
+                                  fontSize: fontSize * 0.8,
+                                ),// Ensures text wraps properly
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                  //     Row(
+                  //       mainAxisAlignment: MainAxisAlignment.center,
+                  //       children: [
+                  //         // Text Input Field
+                  //         TextField(
+                  //           decoration: InputDecoration(
+                  //             hintText: 'Enter your email',
+                  //             contentPadding: const EdgeInsets.symmetric(
+                  //                 horizontal: 20, vertical: 16), // Inner padding
+                  //             border: OutlineInputBorder(
+                  //               borderRadius: BorderRadius.circular(30), // Rounded corners
+                  //               borderSide: const BorderSide(color: Colors.grey),
+                  //             ),
+                  //             focusedBorder: OutlineInputBorder(
+                  //               borderRadius: BorderRadius.circular(30), // Rounded corners
+                  //               borderSide: const BorderSide(color: Colors.blue),
+                  //             ),
+                  //           ),
+                  //         ),
+                  //         const SizedBox(height: 20), // Spacing
+                  //
+                  //         // Cylinder Button
+                  //         // SizedBox(
+                  //         //   width: double.infinity, // Makes the button take full width
+                  //         //   height: 50, // Height of the button
+                  //         //   child: ElevatedButton(
+                  //         //     onPressed: () {
+                  //         //       // Button Action
+                  //         //       print("Get Early Access Pressed");
+                  //         //     },
+                  //         //     style: ElevatedButton.styleFrom(
+                  //         //       backgroundColor: Colors.black, // Button background color
+                  //         //       foregroundColor: Colors.white, // Button text color
+                  //         //       shape: RoundedRectangleBorder(
+                  //         //         borderRadius: BorderRadius.circular(30), // Rounded shape
+                  //         //       ),
+                  //         //     ),
+                  //         //     child: const Text(
+                  //         //       'Get Early Access',
+                  //         //       style: TextStyle(
+                  //         //         fontSize: 18, // Text size
+                  //         //         fontWeight: FontWeight.bold,
+                  //         //       ),
+                  //         //     ),
+                  //         //   ),
+                  //         // ),
+                  //         ],),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
